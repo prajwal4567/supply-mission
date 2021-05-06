@@ -69,20 +69,23 @@ function draw() {
   rectMode(CENTER);
   background(0);
  
-    packageSprite.x= packageBody.position.x ;
-    packageSprite.y= packageBody.position.y ;
+   
+	
  
-  if(keyDown("right")){
-	helicopterSprite.x+=4;
-	packageBody.position.x+=4;
-	// if(packageBody.position.x===packageBody.position.x+4){
-	// 	packageBody.position.x-=100;
-	// }
+  if(keyCode===RIGHT_ARROW){
+	helicopterSprite.x+=4;	
+	packageSprite.x=helicopterSprite.x;
+	packageSprite.y=helicopterSprite.y;   
+	packageBody.position.x=packageSprite.x;
+	packageBody.position.y=packageSprite.y; 
 }
 
-if(keyDown("left")){
+if(keyCode ===LEFT_ARROW){
 	helicopterSprite.x-=4;
-	packageBody.position.x-=4;
+	packageSprite.x=helicopterSprite.x;
+	packageSprite.y=helicopterSprite.y;
+	packageBody.position.x=packageSprite.x;
+	packageBody.position.y=packageSprite.y; 
 }
 	if (keyCode === DOWN_ARROW) {
 		Matter.Body.setStatic(packageBody,false); 
